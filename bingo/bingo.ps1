@@ -17,11 +17,20 @@ if ($help) {
 	exit
 }
 # Mode selection if not provided
-if ($mode -eq "" -or $mode -eq -not "1" -or "2") {
-	$mode = read-host -prompt "1) Blackout`r`n2) Rows`r`nMode (select number)"
+for (int x=0; x!=1; x++){
+if ($mode -eq "") {
+	$mode = read-host -prompt "1) Blackout`r`n2) Rows`r`nMode (select number)" x++
+	if($mode -eq -not "1" -or "2") {
+	$mode = read-host -prompt "1) Blackout`r`n2) Rows`r`nMode (select number)" x--
+	}
+}
+else if ($mode -eq -not "1" -or "2") {
+	$mode = read-host -prompt "1) Blackout`r`n2) Rows`r`nMode (select number)" x++
+	if($mode -eq -not "1" -or "2") { x-- }
 }
 else {
 	echo "Using mode $mode."
+}
 }
 # Input file if not provided
 if ($inputfile -eq "") {
