@@ -17,9 +17,9 @@ if ($help) {
 	exit
 }
 # Mode selection if not provided
-for ($x = 0; $x -ne 1; $x++){
+for ($x = 1; $x -ne 2; $x++){
 if ($mode -eq "") {
-	$mode = read-host -prompt "1) Blackout`r`n2) Rows`r`nMode (select number)" $x++
+	$mode = read-host -prompt "1) Blackout`r`n2) Rows`r`nMode (select number)"
 	if($mode -ne 1 -or 2) {$x--;}
 }
 #elseif ($mode -ne 1 -or 2) {
