@@ -24,7 +24,7 @@ if ($mode -eq "") {
 	$mode = read-host -prompt "1) Blackout`r`n2) Rows`r`nMode (select number)" x--
 	}
 }
-else if ($mode -eq -not "1" -or "2") {
+elseif ($mode -eq -not "1" -or "2") {
 	$mode = read-host -prompt "1) Blackout`r`n2) Rows`r`nMode (select number)" x++
 	if($mode -eq -not "1" -or "2") { x-- }
 }
