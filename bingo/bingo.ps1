@@ -20,11 +20,14 @@ if ($help) {
 for ($x = 1; $x -ne 2; $x++){
 if ($mode -eq "") {
 	$mode = read-host -prompt "1) Blackout`r`n2) Rows`r`nMode (select number)"
-	if($mode -ne 1 -or 2) {$x--;}
+	if($mode -ne 1 -and $mode -ne 2) {
+	echo $mode" is not a valid entry" 
+	$mode = ""
+	$x--}
 }
-#elseif ($mode -ne 1 -or 2) {
-#	$mode = read-host -prompt "1) Blackout`r`n2) Rows`r`nMode (select number)" $x++
-#	if($mode -ne 1 -or 2) { $x--;}
+#elseif ($mode -ne 1 -and $mode -ne 2) {
+#	$mode = read-host -prompt "1) Blackout`r`n2) Rows`r`nMode (select number)"
+#	if($mode -ne 1 -and $mode -ne 2) { $x--;}
 #}
 else {
 	echo "Using mode $mode."
