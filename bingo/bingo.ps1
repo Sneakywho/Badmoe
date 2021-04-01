@@ -7,7 +7,7 @@ param(
 	[string]$mode,
 	[parameter(position=2)]
 	[string]$inputfile,
-	[parameter]
+	[parameter()]
 	[switch]$help
 )
 # Help output
