@@ -17,7 +17,7 @@ if ($help) {
 	exit
 }
 # Mode selection if not provided
-if ($mode -eq "") {
+if ($mode -eq "" -or $mode -eq -not "1" -or "2") {
 	$mode = read-host -prompt "1) Blackout`r`n2) Rows`r`nMode (select number)"
 }
 else {
